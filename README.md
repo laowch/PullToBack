@@ -1,4 +1,9 @@
-PullToBack
+Android PullToBack effect like Inbox 
 ==========
 
-Android PullToBack effect like inbox 
+This project implements a PullToBack effect like Inbox (A mail app by Google).
+
+
+
+
+
