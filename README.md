@@ -11,6 +11,7 @@ This project implements a PullToBack effect like Inbox (A mail app by Google).
     * **ListView**
     * **ScrollView**
     * **A form with EditText (You can assgin EditText as scroll child with the method PullToBackLayout.setScrollChild().)**
+    * **Any other view can be scroll or not, in theory.(I dont test it.)**
 
 
 ## Known Issus
