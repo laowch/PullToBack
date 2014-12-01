@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.laowch.pulltoback.PullToBackLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:background="@android:color/background_dark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="placeholder 1"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="#111" />
+
+            <TextView
+                android:text="placeholder 2"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="#222" />
+
+            <TextView
+                android:text="placeholder 3"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="#333" />
+
+
+            <TextView
+                android:text="placeholder 4"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="#444" />
+        </LinearLayout>
+    </ScrollView>
+</com.laowch.pulltoback.PullToBackLayout>
