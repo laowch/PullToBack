@@ -161,11 +161,6 @@ public class PullToBackLayout extends ViewGroup {
     }
 
     @Override
-    public void requestDisallowInterceptTouchEvent(boolean b) {
-        // Nope.
-    }
-
-    @Override
     public boolean onTouchEvent(MotionEvent event) {
         dragHelper.processTouchEvent(event);
         return true;

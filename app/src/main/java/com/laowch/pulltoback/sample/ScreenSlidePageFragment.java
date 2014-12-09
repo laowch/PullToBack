@@ -17,6 +17,7 @@
 package com.laowch.pulltoback.sample;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -38,14 +39,17 @@ public class ScreenSlidePageFragment extends Fragment {
      */
     private int mPageNumber;
 
+    View scroll;
+
     /**
      * Factory method for this fragment class. Constructs a new fragment for the given page number.
      */
-    public static ScreenSlidePageFragment create(int pageNumber) {
-        ScreenSlidePageFragment fragment = new ScreenSlidePageFragment();
+    public static ScreenSlidePageFragment create(Context context, int pageNumber) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, pageNumber);
-        fragment.setArguments(args);
+
+        ScreenSlidePageFragment fragment = (ScreenSlidePageFragment) Fragment.instantiate(context, ScreenSlidePageFragment.class.getName(), args);
+
         return fragment;
     }
 
@@ -65,6 +69,8 @@ public class ScreenSlidePageFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater
                 .inflate(R.layout.fragment_screen_slide_page, container, false);
 
+        scroll = rootView;
+
         // Set the title view to show the page number.
         ((TextView) rootView.findViewById(android.R.id.text1)).setText("Step" + (mPageNumber + 1));
 
@@ -76,5 +82,9 @@ public class ScreenSlidePageFragment extends Fragment {
      */
     public int getPageNumber() {
         return mPageNumber;
+    }
+
+    public View getScroll() {
+        return scroll;
     }
 }
