@@ -10,11 +10,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.laowch.pulltoback.sample.ListViewFragment;
 import com.laowch.pulltoback.sample.ScrollViewFragment;
 import com.laowch.pulltoback.sample.SingleFragmentActivity;
+import com.laowch.pulltoback.sample.ViewPagerFragment;
 
 
 public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
@@ -32,7 +32,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         listView = (ListView) findViewById(R.id.list);
 
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, new String[]{
-                "ListView", "ScrollView", "EditText"}));
+                "ListView", "ScrollView", "ViewPager"}));
 
         listView.setOnItemClickListener(this);
 
@@ -76,7 +76,8 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
                 startActivity(intent);
                 break;
             case 2:
-                Toast.makeText(this, "coming soon", Toast.LENGTH_SHORT).show();
+                intent.putExtra(SingleFragmentActivity.EXTRA_FRAGMENT_NAME, ViewPagerFragment.class.getName());
+                startActivity(intent);
                 break;
         }
     }
