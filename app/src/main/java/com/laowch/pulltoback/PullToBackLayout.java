@@ -3,7 +3,6 @@ package com.laowch.pulltoback;
 import android.app.Activity;
 import android.content.Context;
 import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -155,6 +154,8 @@ public class PullToBackLayout extends ViewGroup {
         boolean handled = false;
         if (isEnabled() && !canChildScrollDown() || !canChildScrollUp()) {
             handled = dragHelper.shouldInterceptTouchEvent(ev);
+        } else {
+            dragHelper.cancel();
         }
         return !handled ? super.onInterceptTouchEvent(ev) : handled;
     }
