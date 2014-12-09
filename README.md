@@ -16,8 +16,8 @@ This project implements a PullToBack effect like Inbox (A mail app by Google).
 
 ## Known Issus
 
-- To avoid misoperation, when you scroll the child view to the border and continue scroll, it should be stucked if you don't Up your finger. 
-- There's some conflicts with ViewPager.
+- ~~To avoid misoperation, when you scroll the child view to the border and continue scroll, it should be stucked if you don't Up your finger.~~ (fixed)
+- ~~There's some conflicts with ViewPager.~~ (fixed)
 
 
 ## License
