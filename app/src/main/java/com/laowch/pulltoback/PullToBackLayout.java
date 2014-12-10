@@ -248,17 +248,20 @@ public class PullToBackLayout extends ViewGroup {
 
         @Override
         public int clampViewPositionVertical(View child, int top, int dy) {
-            int returnValue;
+            int returnValue = 0;
 
-            if (!canChildScrollUp()) {
+            if (!canChildScrollUp() && top > 0) {
                 final int topBound = getPaddingTop();
                 final int bottomBound = verticalRange;
                 returnValue = Math.min(Math.max(top, topBound), bottomBound);
-            } else {
+            }
+
+            if (!canChildScrollDown() && top < 0) {
                 final int topBound = -verticalRange;
                 final int bottomBound = getPaddingTop();
                 returnValue = Math.min(Math.max(top, topBound), bottomBound);
             }
+
             return returnValue;
         }
 
