@@ -275,11 +275,11 @@ public class PullToBackLayout extends ViewGroup {
                 return;
             }
             boolean settleToOpen = false;
-            if (yvel > AUTO_OPEN_SPEED_LIMIT) { // speed has priority over position
-                settleToOpen = !canChildScrollUp();
-            } else if (yvel < -AUTO_OPEN_SPEED_LIMIT) {
-                if (!canChildScrollUp()) {
-                    settleToOpen = false;
+            if (Math.abs(yvel) > Math.abs(xvel)) {
+                if (yvel > AUTO_OPEN_SPEED_LIMIT) {
+                    settleToOpen = !canChildScrollUp();
+                } else if (yvel < -AUTO_OPEN_SPEED_LIMIT) {
+                    settleToOpen = canChildScrollUp();
                 }
             } else if (draggingBorder >= rangeToCheck / BACK_FACTOR) {
                 settleToOpen = true;
